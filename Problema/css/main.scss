@@ -1,0 +1,263 @@
+//variables
+$verde: #27AD60;
+$blanco: #fff;
+
+//Mixins
+@mixin titulos($fsize, $fw, $mtop) {
+    font-size: $fsize;
+    font-weight: $fw;
+    margin-top: $mtop;
+    font-family: 'Roboto', sans-serif;
+}
+@mixin box-color() {
+    width: 20%;
+    float: left;
+}
+@mixin bg-color($color, $pd) {
+    background-color: $color;
+    padding: $pd;
+    display: block;
+    width: 100%;
+}
+@mixin transitions() {
+    -webkit-transition: opacity ease-in-out 500ms;
+    -moz-transition: opacity ease-in-out 500ms;
+    -o-transition: opacity ease-in-out 500ms;
+    transition: opacity ease-in-out 500ms
+} 
+@mixin border-radius($radius) {
+    -Webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+#header {
+	.navbar-default {
+    	background-color: #27AD60;
+    	border-color: #27AD60;
+    	padding: 14px 0;
+    	margin: 0;
+	}
+	.navbar-nav {
+		padding: 25px 0;
+		li > a {
+    		color: $blanco;
+			padding: 7px 14px;
+			font-size: 15px;
+    		&:hover, &:focus {
+    			background-color: #207A0B;
+    			color:#50C772;
+    		}
+		}
+	}
+	.navbar-toggle {
+    	border: 1px solid #207A0B;
+    	background-color: #23833E;
+    	margin-top: 22px;
+    	box-shadow: 2px 2px 24px #088722;
+    	.icon-bar {
+    		background-color: $blanco;
+		}
+	}
+	.navbar-collapse {
+		border-top: 2px solid #23833E;
+	}
+	.navbar-brand {
+		margin-left: 21px;
+		&:hover, &:focus {
+		background-color: rgba(8, 104, 36, 0.48);
+	    }
+	}
+}
+#main-slider {
+	.carousel {
+        .carousel-inner {
+            .item.active {
+                opacity: 1;
+                @include transitions ();
+                z-index: 1;
+                color: $blanco;
+            }
+            .item:first-child {
+                top: auto;
+                position: relative;
+            }
+            .item {
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                left: 0 !important;
+                opacity: 0;
+                top: 0;
+                position: absolute;
+                width: 100%;
+                display: block !important;
+                height: 600px;
+                text-align: center;
+                color: #1C8E1B;
+                @include transitions ();
+                h1 {
+                    @include titulos(50px, 300, 150px);
+                }
+                p{
+                    @include titulos(25px, 300, 50px);
+                }
+            }
+        }
+    }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            margin-top: -25px;
+            font-size: 24px;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            @include border-radius(4px);
+            z-index: 5;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 10px;        
+            }
+            .glyphicon {
+                margin-top: 13px;
+            }
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+}
+#colors {
+    color: #000;
+    text-align: center;
+    h1 {
+       @include titulos(50px, 300, 50px); 
+    }
+    img {
+        margin: 10px auto 20px;
+    }
+    .box-colors {
+        margin: 10px auto;
+        overflow: hidden;
+        width: 670px;
+        position: relative;
+        .width {
+            @include box-color();
+            .color1 {
+                @include bg-color(#69D2E7, 2px 10px 80px);
+            }
+            .color2 {
+                @include bg-color(#A7DBDB, 2px 10px 80px);
+            }
+            .color3 {
+                @include bg-color(#E0E4CC, 2px 10px 80px);
+            }
+            .color4 {
+                @include bg-color(#F38630, 2px 10px 80px);
+            }
+            .color5 {
+                @include bg-color(#FA6900, 2px 10px 80px);
+            }
+            .color6 {
+                @include bg-color(#E94C6F, 2px 10px 80px);
+            }
+            .color7 {
+                @include bg-color(#542733, 2px 10px 80px);
+            }
+            .color8 {
+                @include bg-color(#5A6A62, 2px 10px 80px);
+            }
+            .color9 {
+                @include bg-color(#C6D5CD, 2px 10px 80px);
+            }
+            .color10 {
+                @include bg-color(#FDF200, 2px 10px 80px);
+            }
+            .color11 {
+                @include bg-color(#DB3340, 2px 10px 80px);
+            }
+            .color12 {
+                @include bg-color(#E8B71A, 2px 10px 80px);
+            }
+            .color13 {
+                @include bg-color(#F7EAC8, 2px 10px 80px);
+            }
+            .color14 {
+                @include bg-color(#1FDA9A, 2px 10px 80px);
+            }
+            .color15 {
+                @include bg-color(#28ABE3, 2px 10px 80px);
+            }
+            .color16 {
+                @include bg-color(#588C73, 2px 10px 80px);
+            }
+            .color17 {
+                @include bg-color(#F2E394, 2px 10px 80px);
+            }
+            .color18 {
+                @include bg-color(#F2AE72, 2px 10px 80px);
+            }
+            .color19 {
+                @include bg-color(#D96459, 2px 10px 80px);
+            }
+            .color20 {
+                @include bg-color(#8C4646, 2px 10px 80px);
+            }
+            .color21 {
+                @include bg-color(#D0C91F, 2px 10px 80px);
+            }
+            .color22 {
+                @include bg-color(#85C4B9, 2px 10px 80px);
+            }
+            .color23 {
+                @include bg-color(#008BBA, 2px 10px 80px);
+            }
+            .color24 {
+                @include bg-color(#DF514C, 2px 10px 80px);
+            }
+            .color25 {
+                @include bg-color(#DC403B, 2px 10px 80px);
+            }
+        }
+    }
+}
+#about {
+    background-color: #2C3E50;
+    padding: 70px 20px;
+    color: $blanco;
+    img.divider {
+        margin: 30px auto 70px;
+        display: block;
+    }
+    h1 {
+        @include titulos(50px, 300, 20px);
+        text-align: center; 
+    }
+    p {
+        @include titulos(12px, 300, 0px); 
+    }
+    .pd {
+        padding: 0 50px;
+    }
+    .box-line {
+        margin-top: 50px;
+        .progress {
+            height: 12px;
+            margin: 15px 0 5px;
+            .progress-bar {
+                background-color: #E58026;
+                box-shadow: 3px 3px 20px;
+                border: 1px solid $blanco;
+            }
+        }
+    }
+    .relative {
+        position: relative;
+    }
+}
