@@ -1,6 +1,9 @@
 //variables
 $verde: #27AD60;
 $blanco: #fff;
+$azul: #2C3E50;
+$naranja: #8F5F38;
+$gray: #989CA1;
 
 //Mixins
 @mixin titulos($fsize, $fw, $mtop) {
@@ -13,9 +16,9 @@ $blanco: #fff;
     width: 20%;
     float: left;
 }
-@mixin bg-color($color, $pd) {
+@mixin bg-color($color) {
     background-color: $color;
-    padding: $pd;
+    padding: 2px 10px 125px;
     display: block;
     width: 100%;
 }
@@ -30,6 +33,11 @@ $blanco: #fff;
     -moz-border-radius: $radius;
     -ms-border-radius: $radius;
     border-radius: $radius;
+}
+@mixin section($color, $textcolor, $align) {
+    background-color: $color;
+    color: $textcolor;
+    text-align: $align;
 }
 #header {
 	.navbar-default {
@@ -60,7 +68,7 @@ $blanco: #fff;
 		}
 	}
 	.navbar-collapse {
-		border-top: 2px solid #23833E;
+		border-top: 2px solid $verde;;
 	}
 	.navbar-brand {
 		margin-left: 21px;
@@ -69,7 +77,22 @@ $blanco: #fff;
 	    }
 	}
 }
+section {
+    h1 {
+        @include titulos(50px, 300, 100px);
+        text-align: center;
+    }
+    img {
+        margin: 20px auto 30px;
+        display: block;
+    }
+    .subtittle {
+        @include titulos(12px, 300, 10px);
+        color: $gray;
+    }
+}
 #main-slider {
+    padding: 0;
 	.carousel {
         .carousel-inner {
             .item.active {
@@ -135,112 +158,97 @@ $blanco: #fff;
 }
 #colors {
     color: #000;
-    text-align: center;
-    h1 {
-       @include titulos(50px, 300, 50px); 
-    }
-    img {
-        margin: 10px auto 20px;
-    }
+    padding: 0;
     .box-colors {
         margin: 10px auto;
         overflow: hidden;
-        width: 670px;
+        width: 100%;
         position: relative;
         .width {
             @include box-color();
             .color1 {
-                @include bg-color(#69D2E7, 2px 10px 80px);
+                @include bg-color(#69D2E7);
             }
             .color2 {
-                @include bg-color(#A7DBDB, 2px 10px 80px);
+                @include bg-color(#A7DBDB);
             }
             .color3 {
-                @include bg-color(#E0E4CC, 2px 10px 80px);
+                @include bg-color(#E0E4CC);
             }
             .color4 {
-                @include bg-color(#F38630, 2px 10px 80px);
+                @include bg-color(#F38630);
             }
             .color5 {
-                @include bg-color(#FA6900, 2px 10px 80px);
+                @include bg-color(#FA6900);
             }
             .color6 {
-                @include bg-color(#E94C6F, 2px 10px 80px);
+                @include bg-color(#E94C6F);
             }
             .color7 {
-                @include bg-color(#542733, 2px 10px 80px);
+                @include bg-color(#542733);
             }
             .color8 {
-                @include bg-color(#5A6A62, 2px 10px 80px);
+                @include bg-color(#5A6A62);
             }
             .color9 {
-                @include bg-color(#C6D5CD, 2px 10px 80px);
+                @include bg-color(#C6D5CD);
             }
             .color10 {
-                @include bg-color(#FDF200, 2px 10px 80px);
+                @include bg-color(#FDF200);
             }
             .color11 {
-                @include bg-color(#DB3340, 2px 10px 80px);
+                @include bg-color(#DB3340);
             }
             .color12 {
-                @include bg-color(#E8B71A, 2px 10px 80px);
+                @include bg-color(#E8B71A);
             }
             .color13 {
-                @include bg-color(#F7EAC8, 2px 10px 80px);
+                @include bg-color(#F7EAC8);
             }
             .color14 {
-                @include bg-color(#1FDA9A, 2px 10px 80px);
+                @include bg-color(#1FDA9A);
             }
             .color15 {
-                @include bg-color(#28ABE3, 2px 10px 80px);
+                @include bg-color(#28ABE3);
             }
             .color16 {
-                @include bg-color(#588C73, 2px 10px 80px);
+                @include bg-color(#588C73);
             }
             .color17 {
-                @include bg-color(#F2E394, 2px 10px 80px);
+                @include bg-color(#F2E394);
             }
             .color18 {
-                @include bg-color(#F2AE72, 2px 10px 80px);
+                @include bg-color(#F2AE72);
             }
             .color19 {
-                @include bg-color(#D96459, 2px 10px 80px);
+                @include bg-color(#D96459);
             }
             .color20 {
-                @include bg-color(#8C4646, 2px 10px 80px);
+                @include bg-color(#8C4646);
             }
             .color21 {
-                @include bg-color(#D0C91F, 2px 10px 80px);
+                @include bg-color(#D0C91F);
             }
             .color22 {
-                @include bg-color(#85C4B9, 2px 10px 80px);
+                @include bg-color(#85C4B9);
             }
             .color23 {
-                @include bg-color(#008BBA, 2px 10px 80px);
+                @include bg-color(#008BBA);
             }
             .color24 {
-                @include bg-color(#DF514C, 2px 10px 80px);
+                @include bg-color(#DF514C);
             }
             .color25 {
-                @include bg-color(#DC403B, 2px 10px 80px);
+                @include bg-color(#DC403B);
             }
         }
     }
 }
 #about {
-    background-color: #2C3E50;
-    padding: 70px 20px;
-    color: $blanco;
-    img.divider {
-        margin: 30px auto 70px;
-        display: block;
-    }
-    h1 {
-        @include titulos(50px, 300, 20px);
-        text-align: center; 
-    }
+    @include section($azul, $blanco, none);
     p {
-        @include titulos(12px, 300, 0px); 
+        @include titulos(15px, 300, 0px); 
+        text-align: left;
     }
     .pd {
         padding: 0 50px;
@@ -248,16 +256,341 @@ $blanco: #fff;
     .box-line {
         margin-top: 50px;
         .progress {
-            height: 12px;
-            margin: 15px 0 5px;
+            height: 17px;
+            margin: 20px 0 5px;
             .progress-bar {
                 background-color: #E58026;
                 box-shadow: 3px 3px 20px;
-                border: 1px solid $blanco;
+                border: 2px solid $blanco;
             }
         }
     }
     .relative {
         position: relative;
     }
+}
+#service{
+     @include section($verde, $blanco, center);
+    p {
+        @include titulos(15px, 300, 10px); 
+    }
+    .row {
+        margin: 50px auto 30px;
+        .col-md-4 {
+            padding: 30px;
+        }
+    }
+    .box-icons {
+        padding: 35px;
+        h3 {
+            @include titulos(25px, 400, 30px);
+        }
+        p {
+            @include titulos(15px, 300, 10px);
+            color: #BCC5D0;
+        }
+        hr {
+            border-color: $verde;
+        }
+        .box {
+            background-color: $azul;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            img.dn {
+            width: 150px;
+            height: 150px;
+            }
+            .img-responsive {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 7px;
+                left: 23px;
+            }
+        }
+        &:hover {
+            background-color: #2A7257;
+            transition-duration: 1s,1s,1s,1s,1s,1s;
+            h3 {
+                color: #C87B29;
+            }
+            hr {
+                border-color: $blanco;
+            }
+            .box {
+                background-color: #C87B29;
+                -webkit-transform: rotate(45deg);
+                transition-duration: 1s,1s,1s,1s,1s,1s;
+                img.dn {
+                    display: none;
+                }
+            }
+        }
+    }
+    .boton {
+         @include section(#443E44, $blanco, center);
+        padding: 14px 20px;
+        &:hover {
+            background-color: #1C3146;
+        }
+    }
+}
+#team {
+    background-color: $verde;
+    color: $blanco;
+    text-align: center;
+    .foto {
+        padding: 20px;
+        margin-top: 50px;
+        img {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+        }
+        h4 {
+            @include titulos(20px, 400, 25px);
+        }   
+        p.ceo {
+            @include titulos(11px, 300, 20px);
+            color: #000;
+        }
+        p {
+            color: #BCC5D0;
+            @include titulos(15px, 300, 20px);
+        }
+        hr {
+            border: 1px dashed #93988B;
+        }
+        .red {
+            margin-top: 20px;
+            .fa {
+                font-size: 17px;
+                margin: 5px;
+                color: #C3C1C2;
+            }
+        }
+    }
+    
+}
+#price {
+    @include section($azul, $blanco, center);
+    .box-dolar {
+        margin-top: 120px;
+        border: 1px solid $verde;
+        .verde {
+            @include section($verde, $blanco, center);
+            padding: 10px;
+            .dolar {
+                @include titulos(45px, 400, 0px);
+                margin: 0;
+            }
+            .disblock {
+                display: inline-block;
+            }
+            .small {
+                @include titulos(12px, 300, 0px);
+                margin-left: -5px;
+            }
+            .small-2 {
+                @include titulos(10px, 300, 0px);
+            }
+        }
+        .orange {
+            @include section($naranja, $blanco, center);
+        }
+        .tittle {
+            @include titulos(20px, 300, 0px);
+            padding: 15px;
+        }
+        .blanco {
+            @include section($blanco, $azul, center);
+        }
+        .blue {
+            @include section($azul, $blanco, center);
+        }
+        .height {
+            padding: 7px;   
+        }
+        .sing {
+            padding: 8px 10px;
+            border: none;
+            margin: 50px auto;
+            @include section(#443E44, $blanco, center);
+            &:hover {
+                background-color: #47371B;
+            }
+
+        }
+        &:hover {
+            border: 2px solid #E67E22;
+            margin-top: 60px;
+            transition-duration: 1s,1s,1s,1s,1s,1s;
+            .blue {
+                background-color: rgba(22, 68, 111, 0.6);
+            }
+            .orange {
+                background-color: #9E5417;
+            }
+        }
+    }
+}
+#clients {
+    @include section($azul, $blanco, center);
+    .text {
+        width: 50%;
+        padding: 20px 35px;
+        margin: 0 auto;
+        p {
+           @include titulos(15px, 400, 30px);
+           font-style: italic; 
+           color: $gray;
+        }
+        .tittle-orange {
+            @include titulos(16px, 400, 10px);
+            color: #C27029; 
+        }
+    }
+}
+#contact {
+    @include section($azul, $blanco, center);
+    .box-contact {
+        width: 65%;
+        margin: 50px auto;
+        form {
+            .form-group {
+                margin-bottom: 15px;
+                input, textarea {
+                    border: 1px solid $azul;
+                }
+            }
+        }
+        
+    }
+    .sing {
+            padding: 8px 10px;
+            border: none;
+            margin: 0px auto;
+            @include section(#443E44, $blanco, center);
+            &:hover {
+                background-color: #47371B;
+            }
+    }
+}
+#facts {
+    background: url(../img/img-divider-img.jpg)repeat;
+    background-size: cover;
+    padding: 100px;
+    text-align: center;
+    .redes {
+        .fa {
+            display: inline-block;
+            color: $blanco;
+            font-size: 100px;
+            margin: 10px;
+        }
+    }
+}
+footer {
+    @include section($verde, $blanco, center);
+    ul {
+        list-style: none;
+        text-align: left;
+        li {
+            margin-left: 50px;
+            p {
+                @include titulos(15px, 300, 10px);
+                .fa {
+                    margin-right: 10px;
+                }
+            }
+        } 
+    }
+    
+    hr {
+        width: 120px;
+    }
+    .input-group-addon {
+        border: 1px solid #443e44;
+        color: #E67E22;
+    }
+    .now {
+        @include section(#443E44, $blanco, center);
+        padding: 7px;
+        border: none;
+        margin-top: 20px;
+        &:hover {
+            background-color: #1C3146;
+        }
+    }
+    .font {
+        @include titulos(15px, 400, 10px); 
+        .right p {
+            float: right;
+        }
+        .left p{
+            float: left;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    #client {
+        .text {
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 980px) {
+    #contact {
+        .box-contact {
+            width: 100%;
+        }
+    }
+    footer {
+        h4 {
+            margin-top: 60px;
+        }
+        ul {
+            text-align: center;
+            padding: 0;
+            li {
+                margin-left: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 760px) {
+    #colors {
+        .box-colors {
+            .width {
+                width: 20%;
+            }
+        } 
+    } 
+    #header {
+        .navbar-collapse {
+            border-top: 2px solid #23833E;
+        }
+    }
+}
+@media screen and (max-width: 680px) {
+    #colors {
+        .box-colors {
+            .width {
+                width: 33.2%;
+            }
+        } 
+
+    } 
+}
+@media screen and (max-width: 420px) {
+    #colors {
+        .box-colors {
+            .width {
+                width: 50%;
+            }
+        } 
+
+    }   
 }
